@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "dev": "nodemon --watch bin --watch routes --watch app.js ./bin/www",
     "start": "node ./bin/www"
   },
   "dependencies": {

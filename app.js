@@ -10,6 +10,16 @@ var taskRouter = require("./routes/api/tasks");
 
 var app = express();
 
+var cors = require("cors");
+
+app.use(
+    cors({
+        origin: "http://localhost:3001", // ระบุ URL ที่อนุญาตให้เข้าถึง API
+        methods: ["GET", "POST", "PUT", "DELETE"], // ระบุ methods ที่อนุญาต
+        allowedHeaders: ["Content-Type", "Authorization"], // ระบุ headers ที่อนุญาต
+    })
+);
+
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");

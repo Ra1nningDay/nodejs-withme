@@ -1,5 +1,4 @@
-const pool = require("./pool");
-require("dotenv").config();
+const pool = require("../config/pool");
 
 async function getTasks() {
     try {

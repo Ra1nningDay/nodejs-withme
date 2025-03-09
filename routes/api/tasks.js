@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 
-const db = require("./../../config/db");
+const db = require("../../controllers/TaskController");
 
 // GET all tasks
 router.get("/tasks", async function (req, res) {

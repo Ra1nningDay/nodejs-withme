@@ -41,7 +41,10 @@ router.put("/tasks/:id", async function (req, res) {
         }
         res.status(200).json(updatedTask);
     } catch (err) {
-        res.status(500).json({ error: "Error updating task" });
+        res.status(500).json({
+            message: "Error updating task",
+            error: err.message,
+        });
     }
 });
 

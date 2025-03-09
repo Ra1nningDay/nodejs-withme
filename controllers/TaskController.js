@@ -26,7 +26,7 @@ async function addTask(name) {
 async function updateTask(id, name, completed) {
     try {
         const result = await pool.query(
-            "UPDATE tasks SET name = $1, completed = $2 WHERE id = $3 RETURNING *",
+            "UPDATE tasks SET name = COALECE($1, name), completed = COALECE($2, completed) WHERE id = $3 RETURNING *",
             [name, completed, id]
         );
         return result.rows[0];

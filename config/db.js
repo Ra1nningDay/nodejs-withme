@@ -1,12 +1,5 @@
-const { Pool } = require("pg");
-
-const pool = new Pool({
-    user: "Ra1nningDay",
-    host: "localhost",
-    database: "test",
-    password: "Kitchenrice2547p",
-    port: 5432,
-});
+const pool = require("./pool");
+require("dotenv").config();
 
 async function getTasks() {
     try {
